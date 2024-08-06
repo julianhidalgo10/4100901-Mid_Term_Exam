@@ -1,5 +1,5 @@
 
-4100901-Mid_Term_Exam.elf:     file format elf32-littlearm
+Turn_Signal_and_Hazard_Lights.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -41,11 +41,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_line   0000a8b5  00000000  00000000  000517f4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e3b97  00000000  00000000  0005c0a9  2**0
+ 19 .debug_str    000e3b80  00000000  00000000  0005c0a9  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00002328  00000000  00000000  0013fc40  2**2
+ 20 .debug_frame  00002328  00000000  00000000  0013fc2c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000075  00000000  00000000  00141f68  2**0
+ 21 .debug_line_str 0000005e  00000000  00000000  00141f54  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
