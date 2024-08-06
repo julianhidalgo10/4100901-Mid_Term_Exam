@@ -46,8 +46,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, 1);
 		HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, 1);
 		HAL_UART_Transmit(&huart2, "S1\r\n", 4, 10);
-		if (HAL_GetTick() < (left_last_press_tick + 300)) {
-			// If the previous press occurred within the last 300 milliseconds.
+		if (HAL_GetTick() < (left_last_press_tick + 500)) {
+			// If the previous press occurred within the last 500 milliseconds.
 			left_toggles = 0xFFFFFF; // a long time toggling (infinite)
 		} else {
 			left_toggles = 6;
@@ -64,8 +64,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, 1);
 		HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, 1);
 		HAL_UART_Transmit(&huart2, "S2\r\n", 4, 10);
-		if (HAL_GetTick() < (right_last_press_tick + 300)) {
-			// if the most recent press occurred within the past 300 milliseconds.
+		if (HAL_GetTick() < (right_last_press_tick + 500)) {
+			// if the most recent press occurred within the past 500 milliseconds.
 			right_toggles = 0xFFFFFF; // a long time toggling (infinite)
 		} else {
 			right_toggles = 6;
@@ -97,7 +97,8 @@ void heartbeat(void)
 {
 	static uint32_t heartbeat_tick = 0;
 	if (heartbeat_tick < HAL_GetTick()) {
-		heartbeat_tick = HAL_GetTick() + 500;
+		 // The next state change time is set to 250 ms
+		heartbeat_tick = HAL_GetTick() + 250;
 		HAL_GPIO_TogglePin(D1_GPIO_Port, D1_Pin);
 	}
 }
